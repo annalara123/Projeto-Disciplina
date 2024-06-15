@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Previsão de Compras</title>
+</head>
+<body>
+    <h1>Previsão de Compras para {{ nome_produto }}</h1>
+    <img src="{{ url_for('static', filename=previsao_caminho) }}" alt="Previsão de Compras">
+    <a href="{{ url_for('menu') }}">Voltar ao Menu</a>
+</body>
+</html>

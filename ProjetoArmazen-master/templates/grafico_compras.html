@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico do Produto</title>
+</head>
+<body>
+    <h1>Gráfico de Vendas: {{ nome_produto }}</h1>
+    <img src="{{ url_for('static', filename='graficos/' + nome_produto + '.png') }}" alt="Gráfico de {{ nome_produto }}">
+    <br>
+    <a href="{{ url_for('listar_produtos_route') }}">Voltar para Produtos</a>
+    <a href="{{ url_for('menu') }}">Voltar para Menu</a>
+</body>
+</html>

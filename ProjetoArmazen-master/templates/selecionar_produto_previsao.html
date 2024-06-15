@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Produto para Previsão de Compras</title>
+</head>
+<body>
+    <h1>Selecionar Produto para Previsão de Compras</h1>
+    <ul>
+        {% for produto in produtos %}
+            <li>
+                <img src="{{ url_for('static', filename='imagens/' + produto.foto_caminho.split('/')[-1]) }}" alt="{{ produto.nome }}" width="90" height="130">
+                <h2>{{ produto.nome }}</h2>
+                <p>Marca: {{ produto.marca }}</p>
+                <p>Validade: {{ produto.validade }}</p>
+                <p>Preço: {{ produto.preco }}</p>
+                <p>Quantidade Disponível: {{ produto.quantidade_disponivel }}</p>
+                <a href="{{ url_for('previsao_compras', nome_produto=produto.nome) }}">Prever Compras</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('menu') }}">Voltar para Menu</a>
+</body>
+</html>

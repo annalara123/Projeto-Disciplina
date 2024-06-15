@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+    <style>
+        .hidden-link {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <a href="/sair">Logout</a><br><br>
+    <h1>Produtos Disponíveis</h1>
+    {% for produto in produtos %}
+        <div>
+            <img src="{{ url_for('static', filename='css/imagens/' + produto.foto_caminho.split('/')[-1]) }}" alt="{{ produto.nome }}" width="90" height="130">
+            <h2>{{ produto.nome }}</h2>
+            <p>Marca: {{ produto.marca }}</p>
+            <p>Validade: {{ produto.validade }}</p>
+            <p>Preço: {{ produto.preco }}</p>
+            <p>Quantidade Disponível: {{ produto.quantidade_disponivel }}</p>
+            <a href="/detalhesproduto?produto={{ produto.nome }}">
+                <img src="{{ url_for('static', filename='imagens/view.png') }}" width="20" height="30">
+            </a>
+            <a href="/grafico_compras?compras={{ produto.nome }}">Gerar Gráfico de Compras</a>
+            <a href="" class="hidden-link"></a>
+        </div>
+        <hr>
+    {% endfor %}
+    <br>
+    <a href="/menu">Voltar para Menu</a>
+    <a href="/cadastroProdutos" class="hidden-link">Cadastro de Produtos</a>
+</body>
+</html>

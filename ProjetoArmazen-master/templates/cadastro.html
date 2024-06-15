@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+    <form method="POST" action="/cadastro" enctype="multipart/form-data">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <br>
+        <label for="email">Tipo:</label>
+        <select name="tipo" required>
+            <option value="">Informe seu tipo de Usuário</option>
+            <option value="Admin">Admin</option>
+            <option value="Cliente">Cliente</option>
+        </select>
+        <br><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
